@@ -1,0 +1,28 @@
+CREATE DATABASE datos_mysql;
+USE datos_mysql;
+CREATE TABLE tblProducto(
+	strProducto varchar(50),
+    intCodigo int,
+    intPrecio int,
+    intCantidad int,
+    PRIMARY KEY (intCodigo)
+);
+CREATE TABLE tblEnvio(
+	strCiudad varchar(50),
+    intCodigo int,
+    dateFecha DATE,
+    intFactura int,
+    FOREIGN KEY (intCodigo) REFERENCES tblProducto (intCodigo)
+);
+
+INSERT INTO tblproducto VALUES ('Tornillo',2,200,300);
+INSERT INTO tblproducto VALUES ('Martillo',15,20000,15);
+INSERT INTO tblproducto VALUES ('Perno',30,300,400);
+INSERT INTO tblproducto VALUES ('Metro',79,50000,30);
+INSERT INTO tblproducto VALUES ('Sierra',782,100000,3);
+
+INSERT INTO tblenvio VALUES ('Itagui',2,9-10-2011,13);
+INSERT INTO tblenvio VALUES ('Caldas',15,9-10-2011,50);
+INSERT INTO tblenvio VALUES ('Envigado',30,9-10-2011,12);
+INSERT INTO tblenvio VALUES ('Bello',79,9-10-2011,29);
+INSERT INTO tblenvio VALUES ('Copacabana',782,9-10-2011,90);
